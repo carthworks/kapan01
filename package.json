@@ -1,5 +1,5 @@
 {
-  "name": "kapan01",
+  "name": "project01",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,9 +7,13 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.8.2",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1",
+    "react-router-dom": "^7.3.0",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -35,5 +39,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "ajv-keywords": "^3.5.2",
+    "webpack": "^5.97.0"
   }
 }
