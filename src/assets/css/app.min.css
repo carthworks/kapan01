@@ -28124,7 +28124,7 @@ body:not(.app-init) * {
     height: 100%;
     display: flex;
     align-items: center;
-    margin-right: auto
+    /* margin-right: auto */
 }
 
 @media (max-width: 767.98px) {

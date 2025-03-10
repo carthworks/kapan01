@@ -1,4 +1,5 @@
 import React from "react";
+import {  Link } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -9,7 +10,7 @@ const Dashboard = () => {
             <div className="card-body">
             <div className="d-flex fw-bold small mb-3">
 								<span className="flex-grow-1">SITE VISITORS</span>
-								<a href="#" data-toggle="card-expand" className="text-inverse text-opacity-50 text-decoration-none"><i className="bi bi-fullscreen"></i></a>
+								<Link to="#" data-toggle="card-expand" className="text-inverse text-opacity-50 text-decoration-none"><i className="bi bi-fullscreen"></i></Link>
 							</div>
 
               <div className="row align-items-center mb-2">

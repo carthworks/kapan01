@@ -1,10 +1,11 @@
 import React from "react";
+import {  Link } from "react-router-dom";
 
 const NetworkSecurity = () => {
   return (
     <div id="content" className="app-content">
     <ul className="breadcrumb">
-      <li className="breadcrumb-item"><a href="#">Home</a></li>
+      <li className="breadcrumb-item"><Link to="/dashboard">Home</Link></li>
       <li className="breadcrumb-item active">network security</li>
     </ul>
     
