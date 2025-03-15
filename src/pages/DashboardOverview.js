@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, Typography } from "@mui/material";
+// import { Card, CardContent, Typography } from "@mui/material";
 // import Grid2 from "@mui/material/Unstable_Grid2"; // Grid version 2
 // import Grid2 from '@mui/material/Grid2';
 
@@ -29,11 +29,13 @@ const DashboardOverview = () => {
   ];
 
   // Sample Data for Security Score Chart
-  const securityScoreData = [{ name: "Security Score", score: 75 },
+  const securityScoreData = [
+    { name: "Security Score", score: 75 },
     { name: "Network Security", score: 85 },
     { name: "Application Security", score: 72 },
     { name: "Endpoint Security", score: 68 },
-    { name: "Data Protection", score: 90 }];
+    { name: "Data Protection", score: 90 },
+  ];
 
   // Sample Data for Recent Security Alerts Table
   const alertData = [
@@ -62,7 +64,11 @@ const DashboardOverview = () => {
         return "secondary";
     }
   };
-
+  const getColor = (score) => {
+    if (score >= 80) return "success";
+    if (score >= 60) return "warning";
+    return "danger";
+};
   return (
     <div id="content" className="app-content">
       <ul className="breadcrumb">
@@ -104,15 +110,29 @@ const DashboardOverview = () => {
           </div>
         </div>
         <div className="col-md-6">
-          <div className="card shadow-sm">
-            <div className="card-body text-center">
-              <h6 className="card-title">Security Score</h6>
-              <RadialBarChart width={300} height={200} innerRadius="10%" outerRadius="90%" data={securityScoreData}>
-                <RadialBar minAngle={15} label={{ position: "insideStart", fill: "#fff" }} background dataKey="score" fill="#8884d8" />
-              </RadialBarChart>
+            <div className="card shadow-lg">
+                <div className="card-header bg-primary text-white">Security Overview</div>
+                <div className="card-body">
+                    {securityScoreData.map((item, index) => (
+                        <div key={index} className="mb-3">
+                            <h6 className="mb-1">{item.name}</h6>
+                            <div className="progress">
+                                <div
+                                    className={`progress-bar bg-${getColor(item.score)}`}
+                                    role="progressbar"
+                                    style={{ width: `${item.score}%` }}
+                                    aria-valuenow={item.score}
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
+                                >
+                                    {item.score}%
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-          </div>
-        </div>
+      </div>
       </div>
 
       <div className="row mt-4">

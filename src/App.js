@@ -57,7 +57,7 @@ function App() {
               <Route path="/signup" element={<AuthLayout><Signup /></AuthLayout>} />
               <Route path="/logout" element={<AuthLayout><Logout /></AuthLayout>} /> {/* Logout Route */}
 
-              <Route path="*" element={<Navigate to="/login" />} />
+              <Route path="*" element={<AuthLayout><Login /></AuthLayout>} />
             </Routes>
        
         <Footer />
