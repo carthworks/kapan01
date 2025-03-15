@@ -29,7 +29,11 @@ const DashboardOverview = () => {
   ];
 
   // Sample Data for Security Score Chart
-  const securityScoreData = [{ name: "Security Score", score: 75 }];
+  const securityScoreData = [{ name: "Security Score", score: 75 },
+    { name: "Network Security", score: 85 },
+    { name: "Application Security", score: 72 },
+    { name: "Endpoint Security", score: 68 },
+    { name: "Data Protection", score: 90 }];
 
   // Sample Data for Recent Security Alerts Table
   const alertData = [
@@ -65,7 +69,7 @@ const DashboardOverview = () => {
         <li className="breadcrumb-item">
           <Link to="/dashboard">Home</Link>
         </li>
-        <li className="breadcrumb-item active">Dashboard Over view</li>
+        <li className="breadcrumb-item active">Dashboard Overview</li>
       </ul>
 
       <h1 className="page-header">
@@ -85,7 +89,7 @@ const DashboardOverview = () => {
         ))}
       </div>
 
-<div className="row">
+      <div className="row">
         <div className="col-md-6">
           <div className="card shadow-sm">
             <div className="card-body">
@@ -100,60 +104,60 @@ const DashboardOverview = () => {
           </div>
         </div>
         <div className="col-md-6">
-      <div className="card shadow-sm">
-        <div className="card-body text-center">
-          <h6 className="card-title">Security Score</h6>
-          <RadialBarChart width={300} height={200} innerRadius="10%" outerRadius="90%" data={securityScoreData}>
-            <RadialBar minAngle={15} label={{ position: "insideStart", fill: "#fff" }} background dataKey="score" fill="#8884d8" />
-          </RadialBarChart>
-        </div>
-      </div>
-    </div>
-      </div>
-
-      <div className="container mt-4">
-      <div className="card">
-        <div className="card-header bg-dark text-white">
-          <h6 className="mb-0">Recent Security Alerts</h6>
-        </div>
-        <div className="card-body">
-          <div className="table-responsive">
-            <table className="table table-striped table-bordered">
-              <thead className="table-dark">
-                <tr>
-                  <th>ID</th>
-                  <th>Alert</th>
-                  <th>Severity</th>
-                  <th>Source IP</th>
-                  <th>Time</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {alertData.map((alert) => (
-                  <tr key={alert.id}>
-                    <td>{alert.id}</td>
-                    <td>{alert.alert}</td>
-                    <td>
-                      <span className={`badge bg-${getSeverityColor(alert.severity)}`}>
-                        {alert.severity}
-                      </span>
-                    </td>
-                    <td>{alert.sourceIP}</td>
-                    <td>{alert.time}</td>
-                    <td>
-                      <span className={`badge bg-${alert.status === "Resolved" ? "success" : "danger"}`}>
-                        {alert.status}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="card shadow-sm">
+            <div className="card-body text-center">
+              <h6 className="card-title">Security Score</h6>
+              <RadialBarChart width={300} height={200} innerRadius="10%" outerRadius="90%" data={securityScoreData}>
+                <RadialBar minAngle={15} label={{ position: "insideStart", fill: "#fff" }} background dataKey="score" fill="#8884d8" />
+              </RadialBarChart>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+      <div className="container mt-4">
+        <div className="card">
+          <div className="card-header bg-dark text-white">
+            <h6 className="mb-0">Recent Security Alerts</h6>
+          </div>
+          <div className="card-body">
+            <div className="table-responsive">
+              <table className="table table-striped table-bordered">
+                <thead className="table-dark">
+                  <tr>
+                    <th>ID</th>
+                    <th>Alert</th>
+                    <th>Severity</th>
+                    <th>Source IP</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {alertData.map((alert) => (
+                    <tr key={alert.id}>
+                      <td>{alert.id}</td>
+                      <td>{alert.alert}</td>
+                      <td>
+                        <span className={`badge bg-${getSeverityColor(alert.severity)}`}>
+                          {alert.severity}
+                        </span>
+                      </td>
+                      <td>{alert.sourceIP}</td>
+                      <td>{alert.time}</td>
+                      <td>
+                        <span className={`badge bg-${alert.status === "Resolved" ? "success" : "danger"}`}>
+                          {alert.status}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
