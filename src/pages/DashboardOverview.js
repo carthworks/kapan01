@@ -1,10 +1,10 @@
 import React from "react";
-import { Card, CardContent, Typography } from "@mui/material";
+// import { Card, CardContent, Typography } from "@mui/material";
 // import Grid2 from "@mui/material/Unstable_Grid2"; // Grid version 2
-import Grid2 from '@mui/material/Grid2';
+// import Grid2 from '@mui/material/Grid2';
 
-import { LineChart, Line, XAxis, YAxis, Tooltip, RadialBarChart, RadialBar } from "recharts";
-import { AgGridReact } from "ag-grid-react";
+// import { LineChart, Line, XAxis, YAxis, Tooltip, RadialBarChart, RadialBar } from "recharts";
+// import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import {  Link } from "react-router-dom";
@@ -14,7 +14,7 @@ const DashboardOverview = () => {
   const kpiStats = [
     { title: "Active Threats", value: 12, color: "red" },
     { title: "Resolved Incidents", value: 345, color: "green" },
-    { title: "Pending Investigations", value: 5, color: "orange" },
+    { title: "Pending Investigations", value: 5, color: "yellow" },
     { title: "Critical Alerts", value: 3, color: "purple" },
   ];
 
@@ -47,22 +47,31 @@ const DashboardOverview = () => {
   ];
 
   return (
-   
-       <div id="content" className="app-content">
-       <ul className="breadcrumb">
-         <li className="breadcrumb-item"><Link to="/dashboard">Home</Link></li>
-         <li className="breadcrumb-item active">Dashboard Over view</li>
-       </ul>
-       
-       <h1 className="page-header">
-       DashboardOverview<small></small>
-       </h1>
-       
-       <p>
-         Start here
-       </p>
-     </div>
-    
+    <div id="content" className="app-content">
+      <ul className="breadcrumb">
+        <li className="breadcrumb-item">
+          <Link to="/dashboard">Home</Link>
+        </li>
+        <li className="breadcrumb-item active">Dashboard Over view</li>
+      </ul>
+
+      <h1 className="page-header">
+        DashboardOverview<small></small>
+      </h1>
+
+      <div className="row">
+        {kpiStats.map((stat, index) => (
+          <div key={index} className="col-md-3">
+            <div className={`card text-white bg-${stat.color} mb-3`}>
+              <div className="card-body">
+                <h5 className="card-title">{stat.title}</h5>
+                <p className="card-text display-4">{stat.value}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
