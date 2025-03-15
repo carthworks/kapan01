@@ -16,6 +16,7 @@ import Signup from "./pages/Signup";
 import Alerts from "./pages/Alerts";
 import OSApplicationSecurity from "./pages/OSApplicationSecurity";
 import Logout from "./components/Logout";
+import DnsAnalysis from "./pages/DnsAnalysis"
 
 import AIIntegration from "./pages/AIIntegration";
 import UserManagement from "./pages/UserManagement";
@@ -39,7 +40,7 @@ function App() {
               <Route path="/dashboard" element={<MainLayout><Dashboard /></MainLayout>} />
               <Route path="/dashboard/overview" element={<MainLayout><DashboardOverview /></MainLayout>} />
               <Route path="/dashboard/threat-intelligence" element={<MainLayout><Dashboard /></MainLayout>} />
-
+              <Route path="/dashboard/dns-analysis" element={<MainLayout><DnsAnalysis /></MainLayout>} />
               <Route path="/dashboard/settings" element={<MainLayout><Dashboard /></MainLayout>} />
               <Route path="/endpoint-security" element={<MainLayout><EndpointSecurity /></MainLayout>} />
               <Route path="/threat-detection" element={<MainLayout><ThreatDetection /></MainLayout>} />
