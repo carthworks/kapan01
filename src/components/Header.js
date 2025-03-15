@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import NetworkStatus from "../pages/NetworkStatus"; // Adjust the path as needed
+
 
 const Header = () => {
 const toggleSidebar = () => {
@@ -60,9 +62,11 @@ return (
 				</span>
 				<span className="brand-text">CybersecAI </span>
 			</Link>
+			
 		</div>
 		<div className="menu">
-			<div className="menu-item dropdown dropdown-mobile-full"></div>
+		<NetworkStatus/>
+			{/* <div className="menu-item dropdown dropdown-mobile-full"></div>
 
 			<div className="menu-item dropdown dropdown-mobile-full d-none">
 				<a
@@ -90,7 +94,7 @@ return (
 						<i className="bi bi-toggle-off ms-auto text-theme fs-16px my-n1"></i>
 					</a>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	</div>
 );

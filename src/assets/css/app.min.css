@@ -34759,7 +34759,7 @@ body .note-modal-backdrop {
 
 .app-header {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;padding-top: 1rem;
 }
 
 .app-header .menu {
@@ -34793,4 +34793,7 @@ body .note-modal-backdrop {
     font-size:  0.7rem;
   }
 
-  
+  .networkstatus{
+    top: -1.9rem;
+    position: relative;
+  }
