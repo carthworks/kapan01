@@ -4,13 +4,7 @@ import DashboardOverview from "./DashboardOverview";
 
 const Dashboard = () => {
   return (
-    <div id="content" className="app-content">
-      <div className="row">
-
-      <DashboardOverview />
-    
-      </div>
-    </div>
+    <DashboardOverview />
   );
 };
 
