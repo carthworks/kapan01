@@ -115,7 +115,7 @@ const DashboardOverview = () => {
         </div>
       </div>
 
-      <div className="container mt-4">
+      <div className="row mt-4">
         <div className="card">
           <div className="card-header bg-dark text-white">
             <h6 className="mb-0">Recent Security Alerts</h6>
