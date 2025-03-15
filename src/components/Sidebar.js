@@ -69,6 +69,15 @@ const Sidebar = () => {
                     📊 Overview
                   </div>
                 </Link>
+
+                <Link to="/dashboard/dns-analysis" className="menu-link">
+                  <div
+                    className="menu-text"
+                    title="(Real-time security insights, alerts)"
+                  >
+                    📊DNS Analysis
+                  </div>
+                </Link>
                 <Link
                   to="/dashboard/threat-intelligence"
                   target="_blank"

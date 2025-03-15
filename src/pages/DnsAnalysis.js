@@ -36,7 +36,11 @@ const dnsData = {
   }
 };
 
+
 const DnsAnalysis = () => {
+  if (!dnsData) return <p className="text-danger">No data available</p>;
+
+const { domain, "canonical name": canonicalName, sections } = dnsData;
   return (
     <div id="content" className="app-content">
           <ul className="breadcrumb">
@@ -49,31 +53,58 @@ const DnsAnalysis = () => {
           <h1 className="page-header">
           DNS Analysis<small></small>
           </h1>
-    <div className="container mt-4">
-    
-      <div className="card p-3">
-        <h5>Domain: {dnsData.domain}</h5>
-        <p><strong>Canonical Name:</strong> {dnsData["canonical name"]}</p>
-        <p><strong>Name Server (IP):</strong> {dnsData["name-server (ip)"]}</p>
-        <p><strong>Port:</strong> {dnsData.port}</p>
-        <hr />
-        <h5>Metadata</h5>
+          <div className="container mt-4">
+      <h2 className="text-primary">DNS Analysis Report</h2>
+      <div className="card shadow-sm p-3">
+        <h5 className="text-secondary">Domain Information</h5>
+        <p><strong>Domain:</strong> {domain}</p>
+        <p><strong>Canonical Name:</strong> {canonicalName}</p>
+      </div>
+
+      <div className="mt-3 card shadow-sm p-3">
+        <h5 className="text-secondary">DNS Records</h5>
+        <div>
+          <h6>Answers:</h6>
+          <ul className="list-group">
+            {sections?.answer?.map((item, index) => (
+              <li key={index} className="list-group-item">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="mt-2">
+          <h6>Authority:</h6>
+          <ul className="list-group">
+            {sections?.authority?.map((item, index) => (
+              <li key={index} className="list-group-item">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="mt-2">
+          <h6>Additional Records:</h6>
+          <ul className="list-group">
+            {sections?.additional?.map((item, index) => (
+              <li key={index} className="list-group-item">{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="mt-3 card shadow-sm p-3">
+        <h5 className="text-secondary">Conclusions & Risks</h5>
         <ul>
-          {Object.entries(dnsData.metadata).map(([key, value]) => (
-            <li key={key}><strong>{key}:</strong> {value}</li>
-          ))}
+          <li>Multiple authoritative nameservers indicate redundancy and reliability.</li>
+          <li>Presence of MX records suggests email handling capability.</li>
+          <li>Potential risks: DNS poisoning, hijacking, or lack of DNSSEC validation.</li>
         </ul>
-        <hr />
-        {Object.entries(dnsData.sections).map(([section, records]) => (
-          <div key={section}>
-            <h5 className="text-info">{section.charAt(0).toUpperCase() + section.slice(1)}</h5>
-            <ul className="list-group">
-              {records.map((record, index) => (
-                <li key={index} className="list-group-item">{record}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      </div>
+
+      <div className="mt-3 card shadow-sm p-3">
+        <h5 className="text-secondary">Recommendations</h5>
+        <ul>
+          <li>Ensure DNSSEC is enabled for enhanced security.</li>
+          <li>Monitor DNS changes regularly to detect anomalies.</li>
+          <li>Use reputable DNS providers for better performance and security.</li>
+        </ul>
       </div>
     </div>
     </div>
