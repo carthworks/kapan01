@@ -1,13 +1,14 @@
 import React from "react";
-// import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
 // import Grid2 from "@mui/material/Unstable_Grid2"; // Grid version 2
 // import Grid2 from '@mui/material/Grid2';
 
-// import { LineChart, Line, XAxis, YAxis, Tooltip, RadialBarChart, RadialBar } from "recharts";
+import { LineChart, Line, XAxis, YAxis, Tooltip, RadialBarChart, RadialBar } from "recharts";
 // import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import {  Link } from "react-router-dom";
+// import ThreatTrendsCard from "./ThreatTrendsCard"; // Import the ThreatTrendsCard component
 
 const DashboardOverview = () => {
   // Sample Data for KPI Cards
@@ -45,6 +46,18 @@ const DashboardOverview = () => {
     { headerName: "Time Detected", field: "time", flex: 1 },
     { headerName: "Status", field: "status", flex: 1 },
   ];
+  const getSeverityColor = (severity) => {
+    switch (severity) {
+      case "Critical":
+        return "danger";
+      case "High":
+        return "warning";
+      case "Medium":
+        return "primary";
+      default:
+        return "secondary";
+    }
+  };
 
   return (
     <div id="content" className="app-content">
@@ -71,6 +84,76 @@ const DashboardOverview = () => {
           </div>
         ))}
       </div>
+
+<div className="row">
+        <div className="col-md-6">
+          <div className="card shadow-sm">
+            <div className="card-body">
+              <h6 className="card-title">Threat Trends (Last 5 Days)</h6>
+              <LineChart width={400} height={200} data={threatData}>
+                <XAxis dataKey="date" />
+                <YAxis />
+                <Tooltip />
+                <Line type="monotone" dataKey="threats" stroke="#ff0000" strokeWidth={2} />
+              </LineChart>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-6">
+      <div className="card shadow-sm">
+        <div className="card-body text-center">
+          <h6 className="card-title">Security Score</h6>
+          <RadialBarChart width={300} height={200} innerRadius="10%" outerRadius="90%" data={securityScoreData}>
+            <RadialBar minAngle={15} label={{ position: "insideStart", fill: "#fff" }} background dataKey="score" fill="#8884d8" />
+          </RadialBarChart>
+        </div>
+      </div>
+    </div>
+      </div>
+
+      <div className="container mt-4">
+      <div className="card">
+        <div className="card-header bg-dark text-white">
+          <h6 className="mb-0">Recent Security Alerts</h6>
+        </div>
+        <div className="card-body">
+          <div className="table-responsive">
+            <table className="table table-striped table-bordered">
+              <thead className="table-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Alert</th>
+                  <th>Severity</th>
+                  <th>Source IP</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {alertData.map((alert) => (
+                  <tr key={alert.id}>
+                    <td>{alert.id}</td>
+                    <td>{alert.alert}</td>
+                    <td>
+                      <span className={`badge bg-${getSeverityColor(alert.severity)}`}>
+                        {alert.severity}
+                      </span>
+                    </td>
+                    <td>{alert.sourceIP}</td>
+                    <td>{alert.time}</td>
+                    <td>
+                      <span className={`badge bg-${alert.status === "Resolved" ? "success" : "danger"}`}>
+                        {alert.status}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   );
 };
