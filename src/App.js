@@ -6,6 +6,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./assets/css/app.min.css";
 
 import Dashboard from "./pages/Dashboard";
+import DashboardOverview from "./pages/DashboardOverview";
 import EndpointSecurity from "./pages/EndpointSecurity";
 import ThreatDetection from "./pages/ThreatDetection";
 import NetworkSecurity from "./pages/NetworkSecurity";
@@ -36,7 +37,7 @@ function App() {
             <Routes>
               {/* <Route path="/" element={<Dashboard />} /> */}
               <Route path="/dashboard" element={<MainLayout><Dashboard /></MainLayout>} />
-              <Route path="/dashboard/overview" element={<MainLayout><Dashboard /></MainLayout>} />
+              <Route path="/dashboard/overview" element={<MainLayout><DashboardOverview /></MainLayout>} />
               <Route path="/dashboard/threat-intelligence" element={<MainLayout><Dashboard /></MainLayout>} />
 
               <Route path="/dashboard/settings" element={<MainLayout><Dashboard /></MainLayout>} />

@@ -11,14 +11,18 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
-
-    try {
-      // const response = await axios.post("https://your-api-url.com/login", { email, password });
-      // localStorage.setItem("token", response.data.token); // Store JWT
-      navigate("/dashboard");
-    } catch (err) {
-      setError("Invalid credentials. Please try again.");
-    }
+    navigate("/dashboard");
+    // try {
+    //   // const response = await axios.post("https://your-api-url.com/login", { email, password });
+    //   // localStorage.setItem("token", response.data.token); // Store JWT
+    //   if (email === "user@kapan.com" && password === "user") {
+    //     navigate("/dashboard");
+    //   } else {
+    //     setError("Invalid credentials. Please try again.");
+    //   }
+    // } catch (err) {
+    //   setError("Invalid credentials. Please try again.");
+    // }
   };
 
   return (
