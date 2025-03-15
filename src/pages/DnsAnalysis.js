@@ -54,7 +54,7 @@ const { domain, "canonical name": canonicalName, sections } = dnsData;
           DNS Analysis<small></small>
           </h1>
           <div className="container mt-4">
-      <h2 className="text-primary">DNS Analysis Report</h2>
+      {/* <h2 className="text-primary">DNS Analysis Report</h2> */}
       <div className="card shadow-sm p-3">
         <h5 className="text-secondary">Domain Information</h5>
         <p><strong>Domain:</strong> {domain}</p>
