@@ -44,7 +44,7 @@ const NetworkStatus = () => {
 
   return (
     <div className="networkstatus bg-dark0 text-light p-2 d-flex justify-content-between align-items-center">
-      <span className="fw-bold">
+      <span className="fw-bold px-3">
         {isOnline ? "🟢 Online " : "🔴 Offline "}
       </span>
       <span className="m-0">  |  Internet Speed: {speed ? `${speed} Mbps` : "Checking..."}</span>
