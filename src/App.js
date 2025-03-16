@@ -7,7 +7,12 @@ import "./assets/css/app.min.css";
 
 import Dashboard from "./pages/Dashboard";
 import DashboardOverview from "./pages/DashboardOverview";
+
 import EndpointSecurity from "./pages/EndpointSecurity";
+import DeviceInventory from "./pages/DeviceInventory";
+import DeviceControl from "./pages/DeviceControl";
+
+
 import ThreatDetection from "./pages/ThreatDetection";
 import NetworkSecurity from "./pages/NetworkSecurity";
 import Reports from "./pages/Reports";
@@ -44,6 +49,9 @@ function App() {
               <Route path="/dashboard/settings" element={<MainLayout><Dashboard /></MainLayout>} />
 
               <Route path="/endpoint-security" element={<MainLayout><EndpointSecurity /></MainLayout>} />
+              <Route path="/endpoint-security/deviceinventory" element={<MainLayout><DeviceInventory /></MainLayout>} />
+              <Route path="/endpoint-security/devicecontrol" element={<MainLayout><DeviceControl /></MainLayout>} />
+              
               <Route path="/threat-detection" element={<MainLayout><ThreatDetection /></MainLayout>} />
               <Route path="/network-security" element={<MainLayout><NetworkSecurity /></MainLayout>} />
 
