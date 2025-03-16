@@ -34798,3 +34798,24 @@ body .note-modal-backdrop {
     top: -1.9rem;
     position: relative;
   }
+
+  .menu ul {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  margin: 0 10px; /* Add spacing between elements */
+}
+
+a.logout {
+    position: relative;
+    padding: 0;
+    top: 0;
+    /* background: red; */
+    top: -2rem;
+}

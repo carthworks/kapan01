@@ -451,7 +451,7 @@ const Sidebar = () => {
             </div>
           </div>
 
-          <div
+          {/* <div
             className={`menu-item has-sub  ${
               activeMenu === "/logout" ? "active" : ""
             }`}
@@ -467,7 +467,7 @@ const Sidebar = () => {
                 </div>
               </Link>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
