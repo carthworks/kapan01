@@ -134,7 +134,7 @@ const Sidebar = () => {
                     Threat Monitoring 🎯
                   </div>
                 </Link>
-                <Link to="/devicecontrol" className="menu-link">
+                <Link to="/endpoint-security/devicecontrol" className="menu-link">
                   <div
                     className="menu-text"
                     title="(IDS/IPS) (Prevent cyber attacks)"
@@ -264,7 +264,7 @@ const Sidebar = () => {
                     Vulnerability Scanner
                   </div>
                 </Link>
-                <Link to="/devicecontrol" className="menu-link">
+                <Link to="/endpoint-security/devicecontrol" className="menu-link">
                   <div
                     className="menu-text"
                     title="(Restrict/block unauthorized devices)"
