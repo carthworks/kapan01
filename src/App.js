@@ -17,6 +17,7 @@ import Alerts from "./pages/Alerts";
 import OSApplicationSecurity from "./pages/OSApplicationSecurity";
 import Logout from "./components/Logout";
 import DnsAnalysis from "./pages/DnsAnalysis"
+import VulnerabilityTable from "./pages/VulnerabilityTable";
 
 import AIIntegration from "./pages/AIIntegration";
 import UserManagement from "./pages/UserManagement";
@@ -42,10 +43,13 @@ function App() {
               <Route path="/dashboard/threat-intelligence" element={<MainLayout><Dashboard /></MainLayout>} />
               <Route path="/dashboard/dns-analysis" element={<MainLayout><DnsAnalysis /></MainLayout>} />
               <Route path="/dashboard/settings" element={<MainLayout><Dashboard /></MainLayout>} />
+
               <Route path="/endpoint-security" element={<MainLayout><EndpointSecurity /></MainLayout>} />
               <Route path="/threat-detection" element={<MainLayout><ThreatDetection /></MainLayout>} />
               <Route path="/network-security" element={<MainLayout><NetworkSecurity /></MainLayout>} />
+
               <Route path="/osapplication-security"  element={<MainLayout><OSApplicationSecurity /></MainLayout>} />
+              <Route path="/osapplication-security/appvulner"  element={<MainLayout><VulnerabilityTable /></MainLayout>} />
               
               <Route path="/reports" element={<MainLayout><Reports /></MainLayout>} />
               <Route path="/ai-integration" element={<MainLayout><AIIntegration /></MainLayout>} />

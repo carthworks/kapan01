@@ -185,6 +185,12 @@ const Sidebar = () => {
             </a>
             <div className="menu-submenu">
               <div className="menu-item">
+              
+
+              <Link to="/osapplication-security/appvulner" className="menu-link">
+                  <div className="menu-text" title="(Fix recommendations)">
+                  Vulnerability App                </div>
+                </Link>
                 <Link to="/deviceinventory" className="menu-link">
                   <div className="menu-text" title="(Fix recommendations)">
                     AI-powered Security Advisor

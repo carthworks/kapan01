@@ -28005,7 +28005,8 @@ body:not(.app-init) * {
 .app-content {
     padding: 2rem 2rem;
     flex: 1;
-    margin-left: 17.875rem
+    margin-left: 17.875rem;
+    margin-bottom:2rem;
 }
 
 @media (max-width: 767.98px) {

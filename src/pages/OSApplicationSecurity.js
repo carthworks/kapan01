@@ -9,6 +9,23 @@ const OSApplicationSecurity = () => {
     { id: 3, type: "Cross-Site Scripting (XSS)", severity: "Medium", system: "Web App", status: "Resolved" },
   ];
 
+  const handleViewLogs = () => {
+    console.log("Fetching security logs...");
+    // Fetch logs and show in modal
+  };
+
+  const handleScan = () => {
+    console.log("Scanning system for vulnerabilities...");
+    // Call API or trigger a scan
+  };
+
+  const handleViewDetails = (id) => {
+    console.log(`View details for threat ID: ${id}`);
+    // Fetch details and show in modal
+  }
+  
+  
+
   return (
     <div id="content" className="app-content">
     <ul className="breadcrumb">
@@ -102,9 +119,9 @@ const OSApplicationSecurity = () => {
 
       {/* Action Buttons */}
       <div className="mt-4">
-        <button className="btn btn-primary me-2">Run Security Scan</button>
-        <button className="btn btn-secondary me-2">Generate Security Report</button>
-        <button className="btn btn-danger">View Detailed Logs</button>
+        <button className="btn btn-primary me-2" onClick={handleScan}>Run Security Scan</button>
+        <button className="btn btn-secondary me-2" onClick={handleViewLogs}>Generate Security Report</button>
+        <button className="btn btn-danger" onClick={handleViewDetails}>View Detailed Logs</button>
       </div>
     </div>
   </div>
