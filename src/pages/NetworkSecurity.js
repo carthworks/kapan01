@@ -31,14 +31,13 @@ const NetworkSecurity = () => {
     </ul>
     
     <h1 className="page-header">
-    Network Security <small></small>
+    Network Security & Control <small></small>
     </h1>
     
     <Container className="py-4">
-      <h2 className="text-center mb-4">Network Security & Control</h2>
       <Row xs={1} md={2} className="g-4">
-        {features.map((feature) => (
-          <Col key={feature.id}>
+        {features.map((feature, index) => (
+          <Col key={index} md={6} lg={3}>
             <Card className="shadow-lg p-3 border-0 rounded-3 text-center">
               <Card.Body>
                 <div className="mb-3 text-primary">{feature.icon}</div>
