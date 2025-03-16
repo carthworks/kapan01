@@ -11,6 +11,7 @@ import EndpointSecurity from "./pages/EndpointSecurity";
 import ThreatDetection from "./pages/ThreatDetection";
 import NetworkSecurity from "./pages/NetworkSecurity";
 import Reports from "./pages/Reports";
+import ComplianceReports from "./pages/ComplianceReports";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Alerts from "./pages/Alerts";
@@ -34,8 +35,6 @@ function App() {
   return (
     <Router>
       <div id="app" className="app">
-      
-     
             <Routes>
               {/* <Route path="/" element={<Dashboard />} /> */}
               <Route path="/dashboard" element={<MainLayout><Dashboard /></MainLayout>} />
@@ -52,6 +51,8 @@ function App() {
               <Route path="/osapplication-security/appvulner"  element={<MainLayout><VulnerabilityTable /></MainLayout>} />
               
               <Route path="/reports" element={<MainLayout><Reports /></MainLayout>} />
+              <Route path="/reports/compliance" element={<MainLayout><ComplianceReports /></MainLayout>} />
+
               <Route path="/ai-integration" element={<MainLayout><AIIntegration /></MainLayout>} />
               <Route path="/alerts" element={<MainLayout><Alerts /></MainLayout>} />
               <Route path="/user-management" element={<MainLayout><UserManagement /></MainLayout>} />

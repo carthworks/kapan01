@@ -372,7 +372,7 @@ const Sidebar = () => {
                     Security Reports
                   </div>
                 </Link>
-                <Link to="/complianceReports" className="menu-link">
+                <Link to="/reports/compliance" className="menu-link">
                   <div className="menu-text" title="(GDPR, ISO, NIST, etc.)">
                     Compliance Reports
                   </div>

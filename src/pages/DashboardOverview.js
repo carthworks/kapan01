@@ -110,29 +110,28 @@ const DashboardOverview = () => {
           </div>
         </div>
         <div className="col-md-6">
-            <div className="card shadow-lg">
-                <div className="card-header bg-primary text-white">Security Overview</div>
-                <div className="card-body">
-                    {securityScoreData.map((item, index) => (
-                        <div key={index} className="mb-3">
-                            <h6 className="mb-1">{item.name}</h6>
-                            <div className="progress">
-                                <div
-                                    className={`progress-bar bg-${getColor(item.score)}`}
-                                    role="progressbar"
-                                    style={{ width: `${item.score}%` }}
-                                    aria-valuenow={item.score}
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                >
-                                    {item.score}%
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+          <div className="card shadow-lg">
+            <div className="card-header bg-primary text-white">Security Overview</div>
+            <div className="card-body">
+              {securityScoreData.map((item, index) => (
+                <div key={index} className="mb-3">
+                  <h6 className="mb-1">{item.name}</h6>
+                  <div className="progress" role="progressbar">
+                    <div
+                      className={`progress-bar bg-${getColor(item.score)}`}
+                      style={{ width: `${item.score}%` }}
+                      aria-valuenow={item.score}
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      {item.score}%
+                    </div>
+                  </div>
                 </div>
+              ))}
             </div>
-      </div>
+          </div>
+        </div>
       </div>
 
       <div className="row mt-4">

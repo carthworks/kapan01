@@ -1,35 +1,43 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Card, Container, Row, Col, Button  } from "react-bootstrap";
 import { FaChartBar, FaAward, FaSearch, FaCalendarAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Reports = () => {
+
+  const navigate = useNavigate();
 
   const reports = [
     {
       title: "Security Reports",
       description: "Customizable reports for real-time security insights.",
       icon: <FaChartBar size={40} className="text-primary" />,
+      link: "/reports/security"
     },
     {
       title: "Compliance Reports",
       description: "Adheres to GDPR, ISO, NIST, and other security standards.",
       icon: <FaAward size={40} className="text-success" />,
+      link: "/reports/compliance"
     },
     {
       title: "Attack Trend Analysis",
       description: "Historical insights and trends of cyber threats.",
       icon: <FaSearch size={40} className="text-danger" />,
+      link: "/reports/attacktrend"
     },
     {
       title: "Scheduled Reports",
       description: "Auto-generated analytics reports for regular assessments.",
       icon: <FaCalendarAlt size={40} className="text-warning" />,
+      link: "/reports/scheduled"
     },
   ];
-  
-  const handleExplore = (title) => {
-    alert(`Exploring ${title}`);
+
+  const handleExplore = (link) => {
+    alert(`Exploring ${link}`);
+    navigate(link);
   };
   
   return (
@@ -53,7 +61,7 @@ const Reports = () => {
                 <div className="mb-3">{report.icon}</div>
                 <Card.Title className="fw-bold">{report.title}</Card.Title>
                 <Card.Text className="text-muted">{report.description}</Card.Text>
-              <Button variant="primary" onClick={() => handleExplore(report.title)}>Explore</Button>
+              <Button variant="primary" onClick={() => handleExplore(report.link)}>Explore</Button>
               </Card.Body>
             </Card>
           </Col>
