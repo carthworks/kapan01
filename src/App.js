@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 // import "./App.css";
@@ -11,6 +11,7 @@ import DashboardOverview from "./pages/DashboardOverview";
 import EndpointSecurity from "./pages/EndpointSecurity";
 import DeviceInventory from "./pages/DeviceInventory";
 import DeviceControl from "./pages/DeviceControl";
+import NetworkControl from "./pages/NetworkControl";
 
 
 import ThreatDetection from "./pages/ThreatDetection";
@@ -51,7 +52,9 @@ function App() {
               <Route path="/endpoint-security" element={<MainLayout><EndpointSecurity /></MainLayout>} />
               <Route path="/endpoint-security/deviceinventory" element={<MainLayout><DeviceInventory /></MainLayout>} />
               <Route path="/endpoint-security/devicecontrol" element={<MainLayout><DeviceControl /></MainLayout>} />
-              
+              <Route path="/endpoint-security/networkcontrol" element={<MainLayout><NetworkControl /></MainLayout>} />
+             
+             
               <Route path="/threat-detection" element={<MainLayout><ThreatDetection /></MainLayout>} />
               <Route path="/network-security" element={<MainLayout><NetworkSecurity /></MainLayout>} />
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Card, Container, Row, Col, Button  } from "react-bootstrap";
 import { FaChartBar, FaAward, FaSearch, FaCalendarAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";

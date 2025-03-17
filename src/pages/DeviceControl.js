@@ -33,7 +33,15 @@ const DeviceControl = () => {
     setShowModal(true);
   };
 
+  /**
+   * Updates the state of a specific device's access field with a new value.
+   *
+   * @param {string} deviceId - The unique identifier of the device.
+   * @param {string} field - The field within the device's access state to update.
+   * @param {*} value - The new value to set for the specified field.
+   */
   const handleDropdownChange = (deviceId, field, value) => {
+    console.log(deviceId, field, value)
     setDeviceAccessStates((prevState) => ({
       ...prevState,
       [deviceId]: {
