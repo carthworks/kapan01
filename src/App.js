@@ -27,7 +27,10 @@ import DnsAnalysis from "./pages/DnsAnalysis"
 import VulnerabilityTable from "./pages/VulnerabilityTable";
 
 import AIIntegration from "./pages/AIIntegration";
+
 import UserManagement from "./pages/UserManagement";
+import UserRole from "./pages/UserRole";
+
 import Settings from "./pages/Settings";
 
 // import Header from "./components/Header";
@@ -68,7 +71,10 @@ function App() {
 
               <Route path="/ai-integration" element={<MainLayout><AIIntegration /></MainLayout>} />
               <Route path="/alerts" element={<MainLayout><Alerts /></MainLayout>} />
+              
               <Route path="/user-management" element={<MainLayout><UserManagement /></MainLayout>} />
+              <Route path="/user-management/userrole" element={<MainLayout><UserRole /></MainLayout>} />
+             
               <Route path="/settings" element={<MainLayout><Settings /></MainLayout>} />
 
               <Route path="/" element={<AuthLayout><Login /></AuthLayout>} />
