@@ -30,17 +30,17 @@ const Login = () => {
       id="app"
       className="app-content app app-full-height app-without-header"
     >
-      <div class="login">
-        <div class="login-content">
-          <h1 class="text-center">Login</h1>
-          <div class="text-inverse text-opacity-50 text-center mb-4">
+      <div className="login">
+        <div className="login-content">
+          <h1 className="text-center">Login</h1>
+          <div className="text-inverse text-opacity-50 text-center mb-4">
             For your protection, please verify your identity.
           </div>
           {error && <p className="text-danger">{error}</p>}
           <form onSubmit={handleLogin}>
             <div className="mb-3">
-              <label class="form-label">
-                Email Address <span class="text-danger">*</span>
+              <label className="form-label">
+                Email Address <span className="text-danger">*</span>
               </label>
               <input
                 type="email"
@@ -52,8 +52,8 @@ const Login = () => {
               />
             </div>
             <div className="mb-3">
-              <label class="form-label">
-                Password <span class="text-danger">*</span>
+              <label className="form-label">
+                Password <span className="text-danger">*</span>
               </label>
               <input
                 type="password"
@@ -64,10 +64,10 @@ const Login = () => {
                 required
               />
             </div>
-            <div class="mb-3">
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="customCheck1"/>
-							<label class="form-check-label" for="customCheck1">Remember me</label>
+            <div className="mb-3">
+						<div className="form-check">
+							<input className="form-check-input" type="checkbox" value="" id="customCheck1"/>
+							<label className="form-check-label" for="customCheck1">Remember me</label>
 						</div>
 					</div>
             <button type="submit" className="btn btn-outline-theme btn-lg d-block w-100 fw-500 mb-3">

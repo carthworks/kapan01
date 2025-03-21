@@ -7,9 +7,9 @@ import "./assets/css/app.min.css";
 
 import Dashboard from "./pages/Dashboard";
 import DashboardOverview from "./pages/DashboardOverview";
-
 import EndpointSecurity from "./pages/EndpointSecurity";
 import DeviceInventory from "./pages/DeviceInventory";
+import VulnerabilityScanner from "./pages/VulnerabilityScanner";
 import DeviceControl from "./pages/DeviceControl";
 import NetworkControl from "./pages/NetworkControl";
 
@@ -51,6 +51,8 @@ function App() {
 
               <Route path="/endpoint-security" element={<MainLayout><EndpointSecurity /></MainLayout>} />
               <Route path="/endpoint-security/deviceinventory" element={<MainLayout><DeviceInventory /></MainLayout>} />
+              <Route path="/endpoint-security/34" element={<MainLayout><VulnerabilityScanner /></MainLayout>} />
+
               <Route path="/endpoint-security/devicecontrol" element={<MainLayout><DeviceControl /></MainLayout>} />
               <Route path="/endpoint-security/networkcontrol" element={<MainLayout><NetworkControl /></MainLayout>} />
              

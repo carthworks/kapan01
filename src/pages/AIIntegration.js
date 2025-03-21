@@ -14,7 +14,7 @@ const AIIntegration = () => {
     </h1>
     
     <p>
-      Start here
+      This dashboard provides an overview of the AI-Powered Security Automation system. It offers a unified view of the system's performance and allows users to quickly identify potential security threats.
     </p>
   </div>
   );

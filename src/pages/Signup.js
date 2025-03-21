@@ -41,7 +41,7 @@ const Signup = () => {
 
   return (
     <div id="app" className="app app-full-height app-without-header">
-      <div class="register">
+      <div className="register">
         <div className="register-content">
         <div className="d-flex align-items-center justify-content-center vh-100 ">
       <div className="card shadow p-4" style={{ width: "400px" }}>
@@ -51,11 +51,11 @@ const Signup = () => {
 
         <form onSubmit={handleSubmit}>
           {/* Name Field */}
-          <h1 class="text-center">Sign Up</h1>
-					<p class="text-inverse text-opacity-50 text-center">One Admin ID is all you need to access all the Admin services.</p>
+          <h1 className="text-center">Sign Up</h1>
+					<p className="text-inverse text-opacity-50 text-center">One Admin ID is all you need to access all the Admin services.</p>
 					
           <div className="mb-3">
-          <label class="form-label">Name <span class="text-danger">*</span></label>
+          <label className="form-label">Name <span className="text-danger">*</span></label>
             <input
               type="text"
               className={`form-control form-control-lg bg-inverse bg-opacity-5 ${errors.name ? "is-invalid" : ""}`}
@@ -67,7 +67,7 @@ const Signup = () => {
 
           {/* Email Field */}
           <div className="mb-3">
-          <label class="form-label">Email Address <span class="text-danger">*</span></label>
+          <label className="form-label">Email Address <span className="text-danger">*</span></label>
             <input
               type="email"
               className={`form-control form-control-lg bg-inverse bg-opacity-5 ${errors.email ? "is-invalid" : ""}`}
@@ -80,7 +80,7 @@ const Signup = () => {
 
           {/* Password Field */}
           <div className="mb-3">
-          <label class="form-label">Password <span class="text-danger">*</span></label>
+          <label className="form-label">Password <span className="text-danger">*</span></label>
             <input
               type="password"
               className={`form-control form-control-lg bg-inverse bg-opacity-5 ${errors.password ? "is-invalid" : ""}`}
@@ -92,7 +92,7 @@ const Signup = () => {
 
           {/* Confirm Password Field */}
           <div className="mb-3">
-          <label class="form-label">Confirm Password <span class="text-danger">*</span></label>
+          <label className="form-label">Confirm Password <span claclassNamess="text-danger">*</span></label>
             <input
               type="password"
               className={`form-control form-control-lg bg-inverse bg-opacity-5 ${errors.confirmPassword ? "is-invalid" : ""}`}
@@ -103,8 +103,8 @@ const Signup = () => {
           </div>
 
           {/* Submit Button */}
-          <div class="mb-3">
-						<button type="submit" class="btn btn-outline-theme btn-lg d-block w-100">Sign Up</button>
+          <div className="mb-3">
+						<button type="submit" className="btn btn-outline-theme btn-lg d-block w-100">Sign Up</button>
 					</div>        </form>
 
         <p className="text-inverse text-opacity-50 text-center mt-3">

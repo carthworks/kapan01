@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Table, Button, Modal, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+const API_ENDPOINT = 'http://localhost:5000/api/devices/access-control';
 const devices = [
     { id: 1, name: "LTINWIN001", os: "Windows", model: "Dell", type: "Laptop", risk: "HIGH", user: "user1@company.com" },
     { id: 2, name: "LTINWIN002", os: "MacOS", model: "MacBook Pro", type: "Laptop", risk: "MEDIUM", user: "user2@company.com" },
@@ -56,15 +57,49 @@ const DeviceControl = () => {
     return state?.device && state?.access;
   };
 
-  const toggleEnableDisable = (deviceId) => {
-    alert(deviceId);
-    setDeviceAccessStates((prevState) => ({
-      ...prevState,
-      [deviceId]: {
-        ...prevState[deviceId],
-        enabled: !prevState[deviceId]?.enabled,
-      },
-    }));
+  const toggleEnableDisable = async (deviceId) => {
+    const deviceState = deviceAccessStates[deviceId];
+    const device = devices.find(d => d.id === deviceId);
+    
+    if (!deviceState?.device || !deviceState?.access) {
+      alert('Please select both device type and access level');
+      return;
+    }
+
+    try {
+      const payload = {
+        deviceId: deviceId,
+        deviceName: device.name,
+        selectedDevice: deviceState.device,
+        accessLevel: deviceState.access,
+        enabled: !deviceState?.enabled
+      };
+console.table(payload);
+      const response = await fetch(API_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to update device state');
+      }
+
+      // Only update state if API call was successful
+      setDeviceAccessStates((prevState) => ({
+        ...prevState,
+        [deviceId]: {
+          ...prevState[deviceId],
+          enabled: !prevState[deviceId]?.enabled,
+        },
+      }));
+
+      alert(`Device: ${deviceState.device}\nAccess: ${deviceState.access}\nItem No: ${deviceId}\nStatus: ${!deviceState?.enabled ? 'Enabled' : 'Disabled'}`);
+    } catch (error) {
+      alert('Error updating device state: ' + error.message);
+    }
   };
 
   const filteredDevices = devices.filter((device) =>
