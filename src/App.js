@@ -32,6 +32,7 @@ import UserManagement from "./pages/UserManagement";
 import UserRole from "./pages/UserRole";
 import UserAccessControl from "./pages/UserAccessControl";
 import RoleBasedPermissions from "./pages/RoleBasedPermissions";
+import MultiTenantSupport from "./pages/MultiTenantSupport";
 
 // import Settings from "./pages/Settings";
 
@@ -78,6 +79,7 @@ function App() {
               <Route path="/user-management/userrole" element={<MainLayout><UserRole /></MainLayout>} />
              <Route path="/user-management/access-control" element={<MainLayout><UserAccessControl /></MainLayout>} />
              <Route path="/user-management/role-based-permissions" element={<MainLayout><RoleBasedPermissions /></MainLayout>} />
+             <Route path="/user-management/multi-tenant-support" element={<MainLayout><MultiTenantSupport /></MainLayout>} />
               {/* <Route path="/settings" element={<MainLayout><Settings /></MainLayout>} /> */}
 
               <Route path="/" element={<AuthLayout><Login /></AuthLayout>} />

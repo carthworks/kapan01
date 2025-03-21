@@ -6,9 +6,9 @@ import { FaUsersCog, FaUserShield, FaBuilding, FaShieldAlt, FaKey } from "react-
 const features = [
   { id: 1, title: "User & Role Management", icon: <FaUsersCog size={30} />, desc: "Manage users and their roles effectively.", link: "/user-management/userrole" },
   { id: 2, title: "User Access Control", icon: <FaUserShield size={30} />, desc: "Control access levels for users.", link: "/user-management/access-control" },
-  { id: 3, title: "Multi-Tenant Support", icon: <FaBuilding size={30} />, desc: "Support multiple organizations.", link: "/user-management/multi-tenant" },
+  { id: 3, title: "Multi-Tenant Support", icon: <FaBuilding size={30} />, desc: "Support multiple organizations.", link: "/user-management/multi-tenant-support" },
   { id: 4, title: "Role-based Permissions", icon: <FaShieldAlt size={30} />, desc: "Assign permissions based on roles.", link: "/user-management/role-based-permissions" },
-  { id: 5, title: "2FA & Authentication Logs", icon: <FaKey size={30} />, desc: "Enable two-factor authentication and logs.", link: "/user-management/authentication-logs" }
+  // { id: 5, title: "2FA & Authentication Logs", icon: <FaKey size={30} />, desc: "Enable two-factor authentication and logs.", link: "/user-management/authentication-logs" }
 ];
 
 const UserManagement = () => {
@@ -22,6 +22,7 @@ const UserManagement = () => {
     <div id="content" className="app-content">
     <ul className="breadcrumb">
       <li className="breadcrumb-item"><Link to="/dashboard">Home</Link></li>
+      <li className="breadcrumb-item"><Link to="/user-management">user-management</Link></li>
       <li className="breadcrumb-item active">User & Role Management</li>
     </ul>
     
@@ -33,7 +34,7 @@ const UserManagement = () => {
       {/* <h2 className="text-center mb-4">🔒 User Management & Access Control</h2> */}
       <Row className="g-4">
         {features.map((feature) => (
-          <Col key={feature.id} md={6} lg={4}>
+          <Col key={feature.id} md={3} lg={3}>
             <Card className="shadow-lg border-0 rounded-4 text-center p-3">
               <div className="text-primary text-center mb-3">{feature.icon}</div>
               <Card.Body className="text-center">

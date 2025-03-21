@@ -64,7 +64,8 @@ const UserAccessControl = () => {
     <div id="content" className="app-content">
                 <ul className="breadcrumb">
                     <li className="breadcrumb-item"><Link to="/dashboard">Home</Link></li>
-                    <li className="breadcrumb-item active">User Access Control</li>
+                     <li className="breadcrumb-item"><Link to="/user-management">user-management</Link></li>
+                     <li className="breadcrumb-item active">User Access Control</li>
                 </ul>
                 
                 <h1 className="page-header">
