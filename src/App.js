@@ -30,8 +30,10 @@ import AIIntegration from "./pages/AIIntegration";
 
 import UserManagement from "./pages/UserManagement";
 import UserRole from "./pages/UserRole";
+import UserAccessControl from "./pages/UserAccessControl";
+import RoleBasedPermissions from "./pages/RoleBasedPermissions";
 
-import Settings from "./pages/Settings";
+// import Settings from "./pages/Settings";
 
 // import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -74,8 +76,9 @@ function App() {
               
               <Route path="/user-management" element={<MainLayout><UserManagement /></MainLayout>} />
               <Route path="/user-management/userrole" element={<MainLayout><UserRole /></MainLayout>} />
-             
-              <Route path="/settings" element={<MainLayout><Settings /></MainLayout>} />
+             <Route path="/user-management/access-control" element={<MainLayout><UserAccessControl /></MainLayout>} />
+             <Route path="/user-management/role-based-permissions" element={<MainLayout><RoleBasedPermissions /></MainLayout>} />
+              {/* <Route path="/settings" element={<MainLayout><Settings /></MainLayout>} /> */}
 
               <Route path="/" element={<AuthLayout><Login /></AuthLayout>} />
               <Route path="/login" element={<AuthLayout><Login /></AuthLayout>} />

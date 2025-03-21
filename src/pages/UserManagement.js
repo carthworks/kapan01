@@ -7,9 +7,8 @@ const features = [
   { id: 1, title: "User & Role Management", icon: <FaUsersCog size={30} />, desc: "Manage users and their roles effectively.", link: "/user-management/userrole" },
   { id: 2, title: "User Access Control", icon: <FaUserShield size={30} />, desc: "Control access levels for users.", link: "/user-management/access-control" },
   { id: 3, title: "Multi-Tenant Support", icon: <FaBuilding size={30} />, desc: "Support multiple organizations.", link: "/user-management/multi-tenant" },
-  { id: 4, title: "Role-based Permissions", icon: <FaShieldAlt size={30} />, desc: "Assign permissions based on roles.", link: "/user-management/role-permissions" },
-  { id: 5, title: "2FA & Authentication Logs", icon: <FaKey size={30} />, desc: "Enable two-factor authentication and logs.", link: "/user-management/authentication-logs" },
-  { id: 6, title: "New Member Management", icon: <FaUsersCog size={30} />, desc: "Manage new members effectively.", link: "/user-management/new-member" },
+  { id: 4, title: "Role-based Permissions", icon: <FaShieldAlt size={30} />, desc: "Assign permissions based on roles.", link: "/user-management/role-based-permissions" },
+  { id: 5, title: "2FA & Authentication Logs", icon: <FaKey size={30} />, desc: "Enable two-factor authentication and logs.", link: "/user-management/authentication-logs" }
 ];
 
 const UserManagement = () => {
