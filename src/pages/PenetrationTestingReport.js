@@ -93,8 +93,11 @@ const PenetrationTestingReport = ({ reportData }) => {
         <Container>
             <h1 className="text-center my-4">Penetration Testing Report</h1>
             <h5><strong>Confidential</strong></h5>
-            <Button variant="primary" onClick={generatePDF}>
+            {/* <Button variant="primary" onClick={generatePDF}>
                 Download Penetration Testing Report - PDF
+            </Button> */}
+             <Button variant="primary" onClick={generatePDF}>
+                      Export as PDF
             </Button>
             <hr />
             {[

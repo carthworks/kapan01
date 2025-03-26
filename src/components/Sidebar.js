@@ -387,6 +387,13 @@ const Sidebar = () => {
                     Scheduled Reports
                   </div>
                 </Link>
+                <Link to="/penetration-testing-report" className="menu-link">
+                  <div className="menu-text" title="(penetration-testing-report)">
+                  Penetration Testing Report
+                  </div>
+                </Link>
+
+               
               </div>
             </div>
           </div>

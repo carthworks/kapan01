@@ -5,6 +5,7 @@ import autoTable from "jspdf-autotable";
 import * as XLSX from "xlsx";
 import html2canvas from "html2canvas";
 import PenetrationTestingReport  from "./PenetrationTestingReport";
+import { Tabs, Tab } from "react-bootstrap";
 
 
 
@@ -310,47 +311,59 @@ const exportPNG = () => {
 };
 
 const PenetrationTest = () => {
+  const [showTable, setShowTable] = React.useState(false);
+  const [showreportTable, setShowReportTable] = React.useState(false);
+
   return (
     <div className="container mt-4">
       <h2 className="mb-3">Penetration Testing Dashboard</h2>
-      <Table striped bordered hover id="report-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Vulnerability</th>
-            <th>Severity</th>
-            <th>CVE</th>
-            <th>Recommendation</th>
-            <th>Remedy</th>
-          </tr>
-        </thead>
-        <tbody>
-          {vulnerabilities.map((v, index) => (
-            <tr key={v.id}>
-              <td>{index + 1}</td>
-              <td>{v.name}</td>
-              <td>
-                <Badge variant={
-                  v.severity === "Critical" ? "danger" :
-                  v.severity === "High" ? "warning" : "info"
-                }>
-                  {v.severity}
-                </Badge>
-              </td>
-              <td>{v.cve}</td>
-              <td>{v.recommendation}</td>
-              <td>{v.remedy}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-      <div className="d-flex gap-2 mt-3">
-        <Button variant="primary" onClick={exportPDF}>Export as PDF</Button>
-        <Button variant="success" onClick={exportExcel}>Export as Excel</Button>
-        <Button variant="info" onClick={exportPNG}>Export as PNG</Button>
-      </div>
-
-      <PenetrationTestingReport reportData={reportData} />
+      <Tabs
+        defaultActiveKey="vulnerabilities"
+        id="penetration-test-tabs"
+        className="mb-3"
+      >
+        <Tab eventKey="vulnerabilities" title="Vulnerabilities Table">
+          <Table striped bordered hover id="report-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Vulnerability</th>
+                <th>Severity</th>
+                <th>CVE</th>
+                <th>Recommendation</th>
+                <th>Remedy</th>
+              </tr>
+            </thead>
+            <tbody>
+              {vulnerabilities.map((v, index) => (
+                <tr key={v.id}>
+                  <td>{index + 1}</td>
+                  <td>{v.name}</td>
+                  <td>
+                    <Badge
+                      variant={
+                        v.severity === "Critical"
+                          ? "danger"
+                          : v.severity === "High"
+                          ? "warning"
+                          : "info"
+                      }
+                    >
+                      {v.severity}
+                    </Badge>
+                  </td>
+                  <td>{v.cve}</td>
+                  <td>{v.recommendation}</td>
+                  <td>{v.remedy}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </Tab>
+        <Tab eventKey="penetrationReport" title="Penetration Testing Report">
+          <PenetrationTestingReport reportData={reportData} />
+        </Tab>
+      </Tabs>
     </div>
   );
 };
