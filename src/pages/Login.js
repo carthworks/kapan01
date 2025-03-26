@@ -28,11 +28,11 @@ const Login = () => {
   return (
     <div
       id="app"
-      className="app-content app app-full-height app-without-header"
+      className="app-content  pace-top app app-full-height app-without-header" style={{marginLeft:0}}
     >
       <div className="login">
         <div className="login-content">
-          <h1 className="text-center">Login</h1>
+        <h1 class="text-center">Sign In</h1>
           <div className="text-inverse text-opacity-50 text-center mb-4">
             For your protection, please verify your identity.
           </div>

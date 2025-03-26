@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-// import "./App.css";
 import "./assets/css/app.min.css";
 
 import Dashboard from "./pages/Dashboard";
@@ -35,13 +34,14 @@ import RoleBasedPermissions from "./pages/RoleBasedPermissions";
 import MultiTenantSupport from "./pages/MultiTenantSupport";
 
 // import Settings from "./pages/Settings";
-
 // import Header from "./components/Header";
 import Footer from "./components/Footer";
-// import Sidebar from "./components/Sidebar";
 
 import AuthLayout from "./assets/layouts/AuthLayout";
 import MainLayout from "./assets/layouts/MainLayout";
+import NotFound from "./components/NotFound";
+// import Sidebar from "./components/Sidebar";
+import PenetrationTestingReport from "./pages/PenetrationTestingReport";
 
 function App() {
   return (
@@ -86,8 +86,10 @@ function App() {
               <Route path="/login" element={<AuthLayout><Login /></AuthLayout>} />
               <Route path="/signup" element={<AuthLayout><Signup /></AuthLayout>} />
               <Route path="/logout" element={<AuthLayout><Logout /></AuthLayout>} /> {/* Logout Route */}
+              <Route path="/penetration-testing-report" element={<MainLayout><PenetrationTestingReport /></MainLayout>} />
+              {/* <Route path="*" element={<AuthLayout><Login /></AuthLayout>} /> */}
+              <Route path="*" element={<NotFound />} />
 
-              <Route path="*" element={<AuthLayout><Login /></AuthLayout>} />
             </Routes>
        
         <Footer />
