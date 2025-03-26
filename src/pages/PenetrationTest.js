@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Table, Button, Badge } from "react-bootstrap";
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
@@ -6,6 +6,7 @@ import * as XLSX from "xlsx";
 import html2canvas from "html2canvas";
 import PenetrationTestingReport  from "./PenetrationTestingReport";
 import { Tabs, Tab } from "react-bootstrap";
+import apiService from "../apiService"; 
 
 
 
@@ -313,6 +314,20 @@ const exportPNG = () => {
 const PenetrationTest = () => {
   const [showTable, setShowTable] = React.useState(false);
   const [showreportTable, setShowReportTable] = React.useState(false);
+  const [reportData1, setReportData] = useState(null);
+
+  useEffect(() => {
+    const fetchReport = async () => {
+      try {
+        const data = await apiService.get("penetration-test-report", { clientId: 123 });
+        setReportData(data);
+      } catch (error) {
+        console.error("Error fetching report:", error);
+      }
+    };
+
+    fetchReport();
+  }, []);
 
   return (
     <div className="container mt-4">
