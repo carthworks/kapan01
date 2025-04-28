@@ -330,12 +330,14 @@ const PenetrationTest = () => {
   }, []);
 
   return (
+    <div id="content" className="app-content">
     <div className="container mt-4">
-      <h2 className="mb-3">Penetration Testing Dashboard</h2>
+      <h2 className="mb-3 my-2">Penetration Testing Dashboard</h2>
       <Tabs
         defaultActiveKey="vulnerabilities"
         id="penetration-test-tabs"
-        className="mb-3"
+      className="mb-3"
+      fill
       >
         <Tab eventKey="vulnerabilities" title="Vulnerabilities Table">
           <Table striped bordered hover id="report-table">
@@ -379,6 +381,7 @@ const PenetrationTest = () => {
           <PenetrationTestingReport reportData={reportData} />
         </Tab>
       </Tabs>
+    </div>
     </div>
   );
 };

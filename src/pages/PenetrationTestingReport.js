@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Table, Button } from "react-bootstrap";
 import { jsPDF } from "jspdf";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link} from "react-router-dom";
 
 const PenetrationTestingReport = ({ reportData }) => {
     const generatePDF = () => {
@@ -90,8 +91,18 @@ const PenetrationTestingReport = ({ reportData }) => {
     };
 
     return (
-        <Container>
-            <h1 className="text-center my-4">Penetration Testing Report</h1>
+        
+                 <div id="content" className="app-content">
+                        <ul className="breadcrumb">
+          <li className="breadcrumb-item"><Link to="/dashboard">Home</Link></li>
+          <li className="breadcrumb-item active">Vulnerabilities Identified</li>
+        </ul>
+        
+        <h1 className="page-header">
+        Penetration Testing Report<small></small>
+        </h1>
+            <div className="container mt-4">
+            {/* <h1 className="text-center my-4">Penetration Testing Report</h1> */}
             <h5><strong>Confidential</strong></h5>
             {/* <Button variant="primary" onClick={generatePDF}>
                 Download Penetration Testing Report - PDF
@@ -183,7 +194,9 @@ const PenetrationTestingReport = ({ reportData }) => {
                     })}
                 </tbody>
             </Table>
-        </Container>
+            </div>
+            </div>
+       
     );
 };
 

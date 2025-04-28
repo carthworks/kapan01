@@ -11,10 +11,10 @@ const Dashboard = () => {
       <Tab eventKey="overview" title="Overview">
         <DashboardOverview />
       </Tab>
-      <Tab eventKey="penetration-testing-dashboard" title="Penetration Testing Dashboard">
+      {/* <Tab eventKey="penetration-testing-dashboard" title="Penetration Testing Dashboard">
         <PenetrationTestingDashboard />
-      </Tab>
-      <Tab eventKey="penetration-test" title="Penetration Test">
+      </Tab> */}
+      <Tab eventKey="penetration-test" title="PenetrationTestingDashboard">
         <PenetrationTest />
       </Tab>
     </Tabs>

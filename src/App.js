@@ -42,6 +42,8 @@ import MainLayout from "./assets/layouts/MainLayout";
 import NotFound from "./components/NotFound";
 // import Sidebar from "./components/Sidebar";
 import PenetrationTestingReport from "./pages/PenetrationTestingReport";
+import DashboardMain  from "./pages/DashboardMain";
+
 
 function App() {
   const reportData  = {
@@ -241,7 +243,7 @@ function App() {
               <Route path="/penetration-testing-report" element={<MainLayout> <PenetrationTestingReport reportData={reportData} /></MainLayout>} />
               {/* <Route path="*" element={<AuthLayout><Login /></AuthLayout>} /> */}
               <Route path="*" element={<NotFound />} />
-
+<Route path="/dashboardmain" element={<MainLayout><DashboardMain /></MainLayout>} />
             </Routes>
        
         <Footer />
