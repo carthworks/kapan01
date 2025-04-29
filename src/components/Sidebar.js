@@ -37,7 +37,7 @@ const Sidebar = () => {
               </Link>
             </a>
           </div>
-          <div className="menu-header">Components</div>
+          <div className="menu-header"></div>
           <div
             className={`menu-item has-sub dashboard ${
               activeMenu === "/dashboard" ? "active" : ""
