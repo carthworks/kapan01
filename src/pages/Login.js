@@ -122,10 +122,10 @@ const Login = () => {
 
               <button
                 type="submit"
-                className="btn btn-primary w-100 fw-bold mb-3 d-flex align-items-center justify-content-center"
+                className="btn btn-success w-100 fw-bold mb-3 d-flex align-items-center justify-content-center"
                 disabled={isLoading}
                 style={{
-                  background: 'linear-gradient(135deg, #007bff 0%, #0056b3 100%)',
+                  background: 'linear-gradient(135deg, #28a745 0%, #1e7e34 100%)',
                   border: 'none',
                   height: '45px'
                 }}

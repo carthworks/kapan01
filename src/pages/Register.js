@@ -76,7 +76,7 @@ const Register = () => {
   return (
     <div className="min-vh-100 d-flex">
       {/* Left Side - Registration Form */}
-      <div className="col-lg-5 col-md-6 d-flex align-items-center justify-content-center bg-dark0">
+      <div className="col-lg-6 col-md-6 d-flex align-items-center justify-content-center bg-dark0">
         <div className="w-100" style={{ maxWidth: '400px', padding: '2rem' }}>
           <div className="mb-4">
             {/* Logo and Brand */}
@@ -288,12 +288,12 @@ const Register = () => {
                     </div>
                   </div>
 
-                  <button 
-                    type="submit" 
-                    className="btn btn-primary btn-lg w-100 fw-bold mb-3 d-flex align-items-center justify-content-center"
+                  <button
+                    type="submit"
+                    className="btn btn-success btn-lg w-100 fw-bold mb-3 d-flex align-items-center justify-content-center"
                     disabled={isLoading || !acceptTerms}
                     style={{
-                      background: 'linear-gradient(135deg, #007bff 0%, #0056b3 100%)',
+                      background: 'linear-gradient(135deg, #28a745 0%, #1e7e34 100%)',
                       border: 'none',
                       height: '50px'
                     }}
@@ -328,7 +328,7 @@ const Register = () => {
       </div>
 
       {/* Right Side - Product Details with Background */}
-      <div className="col-lg-7 col-md-6 d-none d-md-flex position-relative overflow-hidden">
+      <div className="col-lg-6 col-md-6 d-none d-md-flex position-relative overflow-hidden">
         {/* Background Image */}
         <div
           className="position-absolute w-100 h-100"
