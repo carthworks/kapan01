@@ -40,7 +40,7 @@ const Sidebar = () => {
           <div className="menu-header"></div>
           <div
             className={`menu-item has-sub dashboard ${
-              activeMenu === "/dashboard" ? "active" : ""
+              activeMenu === "/dashboardmain" ? "active" : ""
             }`}
           >
             <a href="#" className="menu-link" onClick={(e) => e.preventDefault()}>
