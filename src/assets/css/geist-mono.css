@@ -1,0 +1,178 @@
+/* Geist Mono Font Utilities */
+
+/* Base font family classes */
+.font-geist-mono {
+  font-family: 'Geist Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Source Code Pro', monospace;
+}
+
+/* Font weight utilities for Geist Mono */
+.geist-mono-thin {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 100;
+}
+
+.geist-mono-extralight {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 200;
+}
+
+.geist-mono-light {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 300;
+}
+
+.geist-mono-regular {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 400;
+}
+
+.geist-mono-medium {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 500;
+}
+
+.geist-mono-semibold {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+}
+
+.geist-mono-bold {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 700;
+}
+
+.geist-mono-extrabold {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 800;
+}
+
+.geist-mono-black {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 900;
+}
+
+/* Code and pre elements with Geist Mono */
+.code-geist {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.pre-geist {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* Terminal/console style with Geist Mono */
+.terminal-geist {
+  font-family: 'Geist Mono', monospace;
+  background-color: #1a1a1a;
+  color: #00ff00;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Cybersecurity themed code blocks */
+.cyber-code {
+  font-family: 'Geist Mono', monospace;
+  background-color: #0d1117;
+  color: #58a6ff;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid #30363d;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Log display with Geist Mono */
+.log-display {
+  font-family: 'Geist Mono', monospace;
+  background-color: #212529;
+  color: #adb5bd;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Data table monospace */
+.data-mono {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.8125rem;
+  letter-spacing: 0.025em;
+}
+
+/* Button with Geist Mono (for technical actions) */
+.btn-mono {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+
+/* Badge with Geist Mono (for status indicators) */
+.badge-mono {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.025em;
+}
+
+/* Alert with Geist Mono (for system messages) */
+.alert-mono {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Form input with Geist Mono (for technical inputs) */
+.form-control-mono {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+}
+
+/* Navbar brand with Geist Mono */
+.navbar-brand-mono {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+/* Card title with Geist Mono */
+.card-title-mono {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+/* Table header with Geist Mono */
+.table-header-mono {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+}
+
+/* Responsive font sizes for Geist Mono */
+@media (max-width: 576px) {
+  .font-geist-mono {
+    font-size: 0.8125rem;
+  }
+  
+  .code-geist,
+  .pre-geist {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .font-geist-mono {
+    font-size: 0.9375rem;
+  }
+}

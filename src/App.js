@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./assets/css/app.min.css";
+import "./assets/css/geist-mono.css";
 import { Toaster } from "./components/ui/sonner";
 
 import Dashboard from "./pages/Dashboard";
