@@ -31,19 +31,7 @@ const NotFound = () => {
 				<p className="mb-1">
 					Here are some helpful links instead:
 				</p>
-				{/* <p className="mb-5">
-					<a href="index.html" className="text-decoration-none text-inverse text-opacity-50">Home</a>
-					<span className="link-divider"></span>
-					<a href="page_search_results.html" className="text-decoration-none text-inverse text-opacity-50">Search</a>
-					<span className="link-divider"></span>
-					<a href="email_inbox.html" className="text-decoration-none text-inverse text-opacity-50">Email</a>
-					<span className="link-divider"></span>
-					<a href="calendar.html" className="text-decoration-none text-inverse text-opacity-50">Calendar</a>
-					<span className="link-divider"></span>
-					<a href="settings.html" className="text-decoration-none text-inverse text-opacity-50">Settings</a>
-					<span className="link-divider"></span>
-					<a href="helper.html" className="text-decoration-none text-inverse text-opacity-50">Helper</a>
-				</p> */}
+				<Link to="/dashboard" className="btn btn-outline-theme px-3 rounded-pill me-2"><i className="fa fa-home me-1 ms-n1"></i> Home</Link>
 				<Link to="/login" className="btn btn-outline-theme px-3 rounded-pill"><i className="fa fa-arrow-left me-1 ms-n1"></i> Go Back</Link>
 			</div>
 		</div>
