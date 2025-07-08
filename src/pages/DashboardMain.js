@@ -134,7 +134,7 @@ const DashboardMain = () => {
       {/* Key Metrics Row */}
       <Row className="mb-4">
         <Col lg={3} md={6} className="mb-3">
-          <Card className="h-100 bg-dark border-secondary">
+          <Card className="h-100 bg-dark border border-secondary rounded shadow-sm">
             <Card.Body className="d-flex align-items-center">
               <div className="flex-shrink-0 me-3">
                 <div className="bg-success bg-opacity-20 p-3 rounded-circle">
@@ -151,7 +151,7 @@ const DashboardMain = () => {
         </Col>
 
         <Col lg={3} md={6} className="mb-3">
-          <Card className="h-100 bg-dark border-secondary">
+          <Card className="h-100 bg-dark border border-secondary rounded shadow-sm">
             <Card.Body className="d-flex align-items-center">
               <div className="flex-shrink-0 me-3">
                 <div className="bg-danger bg-opacity-20 p-3 rounded-circle">
@@ -171,7 +171,7 @@ const DashboardMain = () => {
         </Col>
 
         <Col lg={3} md={6} className="mb-3">
-          <Card className="h-100 bg-dark border-secondary">
+          <Card className="h-100 bg-dark border border-secondary rounded shadow-sm">
             <Card.Body className="d-flex align-items-center">
               <div className="flex-shrink-0 me-3">
                 <div className="bg-primary bg-opacity-20 p-3 rounded-circle">
@@ -191,7 +191,7 @@ const DashboardMain = () => {
         </Col>
 
         <Col lg={3} md={6} className="mb-3">
-          <Card className="h-100 bg-dark border-secondary">
+          <Card className="h-100 bg-dark border border-secondary rounded shadow-sm">
             <Card.Body className="d-flex align-items-center">
               <div className="flex-shrink-0 me-3">
                 <div className="bg-warning bg-opacity-20 p-3 rounded-circle">
@@ -211,8 +211,8 @@ const DashboardMain = () => {
       {/* Charts Row */}
       <Row className="mb-4">
         <Col lg={8} className="mb-3">
-          <Card className="h-100 bg-dark border-secondary">
-            <Card.Header className="bg-dark border-secondary pb-0">
+          <Card className="h-100 bg-dark border border-secondary rounded shadow-sm">
+            <Card.Header className="bg-dark border-bottom border-secondary pb-0 rounded-top">
               <h5 className="mb-0 text-light">🔍 Threat Detection Timeline</h5>
               <small className="text-muted">Real-time threat monitoring (Last 24 hours)</small>
             </Card.Header>
@@ -257,8 +257,8 @@ const DashboardMain = () => {
         </Col>
 
         <Col lg={4} className="mb-3">
-          <Card className="h-100 bg-dark border-secondary">
-            <Card.Header className="bg-dark border-secondary pb-0">
+          <Card className="h-100 bg-dark border border-secondary rounded shadow-sm">
+            <Card.Header className="bg-dark border-bottom border-secondary pb-0 rounded-top">
               <h5 className="mb-0 text-light">🛡️ Security Status</h5>
               <small className="text-muted">Device security distribution</small>
             </Card.Header>
@@ -287,8 +287,8 @@ const DashboardMain = () => {
       {/* Device Types and Recent Incidents */}
       <Row className="mb-4">
         <Col lg={6} className="mb-3">
-          <Card className="h-100 bg-dark border-secondary">
-            <Card.Header className="bg-dark border-secondary pb-0">
+          <Card className="h-100 bg-dark border border-secondary rounded shadow-sm">
+            <Card.Header className="bg-dark border-bottom border-secondary pb-0 rounded-top">
               <h5 className="mb-0 text-light">💻 Device Distribution</h5>
               <small className="text-muted">Protected devices by type</small>
             </Card.Header>
@@ -330,8 +330,8 @@ const DashboardMain = () => {
         </Col>
 
         <Col lg={6} className="mb-3">
-          <Card className="h-100 bg-dark border-secondary">
-            <Card.Header className="bg-dark border-secondary pb-0 d-flex justify-content-between align-items-center">
+          <Card className="h-100 bg-dark border border-secondary rounded shadow-sm">
+            <Card.Header className="bg-dark border-bottom border-secondary pb-0 rounded-top d-flex justify-content-between align-items-center">
               <div>
                 <h5 className="mb-0 text-light">⚠️ Recent Security Incidents</h5>
                 <small className="text-muted">Latest security events</small>
@@ -374,8 +374,8 @@ const DashboardMain = () => {
       {/* Vulnerabilities and Quick Actions */}
       <Row className="mb-4">
         <Col lg={8} className="mb-3">
-          <Card className="h-100 bg-dark border-secondary">
-            <Card.Header className="bg-dark border-secondary pb-0 d-flex justify-content-between align-items-center">
+          <Card className="h-100 bg-dark border border-secondary rounded shadow-sm">
+            <Card.Header className="bg-dark border-bottom border-secondary pb-0 rounded-top d-flex justify-content-between align-items-center">
               <div>
                 <h5 className="mb-0 text-light">🔓 Top Vulnerabilities</h5>
                 <small className="text-muted">Critical vulnerabilities requiring attention</small>
@@ -414,8 +414,8 @@ const DashboardMain = () => {
         </Col>
 
         <Col lg={4} className="mb-3">
-          <Card className="h-100 bg-dark border-secondary">
-            <Card.Header className="bg-dark border-secondary pb-0">
+          <Card className="h-100 bg-dark border border-secondary rounded shadow-sm">
+            <Card.Header className="bg-dark border-bottom border-secondary pb-0 rounded-top">
               <h5 className="mb-0 text-light">⚡ Quick Actions</h5>
               <small className="text-muted">Security management tools</small>
             </Card.Header>
@@ -451,7 +451,7 @@ const DashboardMain = () => {
       {criticalAlerts > 0 && (
         <Row className="mb-4">
           <Col>
-            <Alert variant="danger" className="border-danger bg-dark">
+            <Alert variant="danger" className="border border-danger bg-dark rounded shadow-sm">
               <div className="d-flex align-items-center">
                 <AlertTriangle className="me-3 text-danger" size={24} />
                 <div className="flex-grow-1">

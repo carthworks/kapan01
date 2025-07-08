@@ -92,8 +92,8 @@ const ThreatHunting = () => {
       
       <Row className="mb-4">
         <Col md={8}>
-          <Card>
-            <Card.Header className="bg-transparent">
+          <Card className="border border-secondary rounded shadow-sm">
+            <Card.Header className="bg-transparent border-bottom border-secondary">
               <h5 className="mb-0">Hunt Query Builder</h5>
             </Card.Header>
             <Card.Body>
@@ -146,8 +146,8 @@ const ThreatHunting = () => {
           </Card>
         </Col>
         <Col md={4}>
-          <Card className="h-100">
-            <Card.Header className="bg-transparent">
+          <Card className="h-100 border border-secondary rounded shadow-sm">
+            <Card.Header className="bg-transparent border-bottom border-secondary">
               <h5 className="mb-0">MITRE ATT&CK Coverage</h5>
             </Card.Header>
             <Card.Body>
@@ -182,8 +182,8 @@ const ThreatHunting = () => {
       
       <Row className="mb-4">
         <Col>
-          <Card>
-            <Card.Header className="d-flex justify-content-between align-items-center">
+          <Card className="border border-secondary rounded shadow-sm">
+            <Card.Header className="d-flex justify-content-between align-items-center border-bottom border-secondary">
               <h5 className="mb-0">Active Hunting Queries</h5>
               <Button variant="outline-primary" size="sm">
                 <RefreshCw size={16} className="me-1" />
@@ -237,8 +237,8 @@ const ThreatHunting = () => {
       
       <Row>
         <Col>
-          <Card>
-            <Card.Header className="d-flex justify-content-between align-items-center">
+          <Card className="border border-secondary rounded shadow-sm">
+            <Card.Header className="d-flex justify-content-between align-items-center border-bottom border-secondary">
               <h5 className="mb-0">Recent Findings</h5>
               <Button variant="outline-secondary" size="sm">
                 <Download size={16} className="me-1" />
