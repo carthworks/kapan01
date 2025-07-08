@@ -74,48 +74,32 @@ const Register = () => {
   };
 
   return (
-    <div className="min-vh-100 d-flex align-items-center justify-content-center" style={{
-      background: '#212529'
-    }}>
-
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-lg-6 col-md-8 col-sm-10">
-            <div className="card bg-dark border border-secondary rounded shadow-sm">
-              <div className="card-body p-4">
-                {/* Logo and Brand */}
-                <div className="text-center mb-4">
-                  <div className="d-flex align-items-center justify-content-center mb-3">
-                    <div className="d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-20 rounded-circle p-2 me-3" style={{width: '50px', height: '50px'}}>
-                      <Shield className="text-primary" size={24} />
-                    </div>
-                    <h2 className="text-light fw-bold mb-0">CybersecAI</h2>
-                  </div>
-                  <p className="text-muted mb-0">Create your account to start protecting your digital assets</p>
+    <div className="min-vh-100 d-flex">
+      {/* Left Side - Registration Form */}
+      <div className="col-lg-5 col-md-6 d-flex align-items-center justify-content-center bg-dark0">
+        <div className="w-100" style={{ maxWidth: '400px', padding: '2rem' }}>
+          <div className="mb-4">
+            {/* Logo and Brand */}
+            <div className="text-center mb-4">
+              <div className="d-flex align-items-center justify-content-center mb-3">
+                <div className="d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-20 rounded-circle p-2 me-3" style={{width: '50px', height: '50px'}}>
+                  <Shield className="text-primary" size={24} />
                 </div>
+                <h3 className="text-light fw-bold mb-0">CybersecAI</h3>
+              </div>
+              <p className="text-muted small mb-0">Create your account to start protecting your digital assets</p>
+            </div>
 
-                {/* App Goals */}
-                <div className="mb-4 p-3 bg-primary bg-opacity-10 rounded border border-primary border-opacity-25">
-                  <h6 className="text-primary mb-2">🎯 What CybersecAI Offers:</h6>
-                  <ul className="text-muted mb-0 small">
-                    <li>Real-time threat detection and monitoring</li>
-                    <li>Vulnerability assessment and management</li>
-                    <li>Security incident response automation</li>
-                    <li>Compliance reporting and audit trails</li>
-                    <li>AI-powered security analytics</li>
-                  </ul>
-                </div>
+            {/* Error Alert */}
+            {error && (
+              <div className="alert alert-danger d-flex align-items-center mb-4" role="alert">
+                <AlertTriangle size={20} className="me-2" />
+                <div>{error}</div>
+              </div>
+            )}
 
-                {/* Error Alert */}
-                {error && (
-                  <div className="alert alert-danger d-flex align-items-center mb-4" role="alert">
-                    <AlertTriangle size={20} className="me-2" />
-                    <div>{error}</div>
-                  </div>
-                )}
-
-                {/* Registration Form */}
-                <form onSubmit={handleRegister}>
+            {/* Registration Form */}
+            <form onSubmit={handleRegister}>
                   <div className="row">
                     <div className="col-md-6 mb-3">
                       <label className="form-label text-light">
@@ -125,7 +109,7 @@ const Register = () => {
                       <input
                         type="text"
                         name="firstName"
-                        className="form-control form-control-lg bg-dark border-secondary text-light"
+                        className="form-control form-control-lg bg-dark0 border-secondary text-light"
                         value={formData.firstName}
                         onChange={handleInputChange}
                         placeholder="Enter first name"
@@ -144,7 +128,7 @@ const Register = () => {
                       <input
                         type="text"
                         name="lastName"
-                        className="form-control form-control-lg bg-dark border-secondary text-light"
+                        className="form-control form-control-lg bg-dark0 border-secondary text-light"
                         value={formData.lastName}
                         onChange={handleInputChange}
                         placeholder="Enter last name"
@@ -165,7 +149,7 @@ const Register = () => {
                     <input
                       type="email"
                       name="email"
-                      className="form-control form-control-lg bg-dark border-secondary text-light"
+                      className="form-control form-control-lg bg-dark0 border-secondary text-light"
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="Enter your email"
@@ -185,7 +169,7 @@ const Register = () => {
                     <input
                       type="text"
                       name="company"
-                      className="form-control form-control-lg bg-dark border-secondary text-light"
+                      className="form-control form-control-lg bg-dark0 border-secondary text-light"
                       value={formData.company}
                       onChange={handleInputChange}
                       placeholder="Enter company name (optional)"
@@ -205,7 +189,7 @@ const Register = () => {
                       <input
                         type={showPassword ? "text" : "password"}
                         name="password"
-                        className="form-control form-control-lg bg-dark border-secondary text-light pe-5"
+                        className="form-control form-control-lg bg-dark0 border-secondary text-light pe-5"
                         value={formData.password}
                         onChange={handleInputChange}
                         placeholder="Create a strong password"
@@ -264,7 +248,7 @@ const Register = () => {
                       <input
                         type={showConfirmPassword ? "text" : "password"}
                         name="confirmPassword"
-                        className="form-control form-control-lg bg-dark border-secondary text-light pe-5"
+                        className="form-control form-control-lg bg-dark0 border-secondary text-light pe-5"
                         value={formData.confirmPassword}
                         onChange={handleInputChange}
                         placeholder="Confirm your password"
@@ -330,36 +314,93 @@ const Register = () => {
                   </button>
                 </form>
 
-                {/* Sign In Link */}
-                <div className="text-center">
-                  <p className="text-muted mb-0">
-                    Already have an account? 
-                    <Link to="/login" className="text-primary text-decoration-none fw-bold ms-1">
-                      Sign In
-                    </Link>
-                  </p>
-                </div>
+            {/* Sign In Link */}
+            <div className="text-center">
+              <p className="text-muted small mb-0">
+                Already have an account?
+                <Link to="/login" className="text-primary text-decoration-none ms-1">
+                  Sign In
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-                {/* Security Features */}
-                <div className="mt-4 pt-4 border-top border-secondary">
-                  <div className="row text-center">
-                    <div className="col-4">
-                      <CheckCircle className="text-success mb-2" size={24} />
-                      <small className="text-muted d-block">Encrypted Data</small>
-                    </div>
-                    <div className="col-4">
-                      <Shield className="text-primary mb-2" size={24} />
-                      <small className="text-muted d-block">Secure Platform</small>
-                    </div>
-                    <div className="col-4">
-                      <Lock className="text-warning mb-2" size={24} />
-                      <small className="text-muted d-block">Privacy First</small>
-                    </div>
-                  </div>
+      {/* Right Side - Product Details with Background */}
+      <div className="col-lg-7 col-md-6 d-none d-md-flex position-relative overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="position-absolute w-100 h-100"
+          style={{
+            backgroundImage: 'linear-gradient(135deg, rgba(0, 123, 255, 0.8) 0%, rgba(0, 86, 179, 0.9) 100%), url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+            backgroundSize: 'cover, 60px 60px',
+            backgroundPosition: 'center, 0 0',
+            backgroundRepeat: 'no-repeat, repeat'
+          }}
+        ></div>
+
+        {/* Content Overlay */}
+        <div className="position-relative d-flex flex-column justify-content-center align-items-center text-center text-white p-5 w-100">
+          <div className="mb-4">
+            <h1 className="display-4 fw-bold mb-3">Join CybersecAI</h1>
+            <p className="lead mb-4">Advanced Cybersecurity Intelligence Platform</p>
+          </div>
+
+          <div className="row g-4 w-100" style={{ maxWidth: '500px' }}>
+            <div className="col-12">
+              <div className="d-flex align-items-center text-start">
+                <div className="bg-white bg-opacity-20 rounded-circle p-3 me-3" style={{minWidth: '60px', height: '60px'}}>
+                  <Shield className="text-white" size={24} />
+                </div>
+                <div>
+                  <h5 className="mb-1">Real-time Threat Detection</h5>
+                  <p className="mb-0 opacity-75">Monitor and identify security threats as they happen</p>
                 </div>
               </div>
             </div>
 
+            <div className="col-12">
+              <div className="d-flex align-items-center text-start">
+                <div className="bg-white bg-opacity-20 rounded-circle p-3 me-3" style={{minWidth: '60px', height: '60px'}}>
+                  <AlertTriangle className="text-white" size={24} />
+                </div>
+                <div>
+                  <h5 className="mb-1">Vulnerability Management</h5>
+                  <p className="mb-0 opacity-75">Identify and remediate security vulnerabilities</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-12">
+              <div className="d-flex align-items-center text-start">
+                <div className="bg-white bg-opacity-20 rounded-circle p-3 me-3" style={{minWidth: '60px', height: '60px'}}>
+                  <Eye className="text-white" size={24} />
+                </div>
+                <div>
+                  <h5 className="mb-1">Security Monitoring</h5>
+                  <p className="mb-0 opacity-75">24/7 monitoring of your digital infrastructure</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-12">
+              <div className="d-flex align-items-center text-start">
+                <div className="bg-white bg-opacity-20 rounded-circle p-3 me-3" style={{minWidth: '60px', height: '60px'}}>
+                  <CheckCircle className="text-white" size={24} />
+                </div>
+                <div>
+                  <h5 className="mb-1">AI-Powered Analytics</h5>
+                  <p className="mb-0 opacity-75">Machine learning algorithms for threat prediction</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-5">
+            <p className="opacity-75 mb-0">
+              Trusted by <strong>10,000+</strong> security professionals worldwide
+            </p>
           </div>
         </div>
       </div>
