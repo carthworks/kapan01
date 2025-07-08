@@ -28,6 +28,7 @@ import Reports from "./pages/Reports";
 import ComplianceReports from "./pages/ComplianceReports";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Register from "./pages/Register";
 import Alerts from "./pages/Alerts";
 import OSApplicationSecurity from "./pages/OSApplicationSecurity";
 import Logout from "./components/Logout";
@@ -63,6 +64,7 @@ function App() {
           <Route path="/" element={<AuthLayout><Login /></AuthLayout>} />
           <Route path="/login" element={<AuthLayout><Login /></AuthLayout>} />
           <Route path="/signup" element={<AuthLayout><Signup /></AuthLayout>} />
+          <Route path="/register" element={<AuthLayout><Register /></AuthLayout>} />
           <Route path="/logout" element={<AuthLayout><Logout /></AuthLayout>} /> {/* Logout Route */}
           <Route path="/penetration-testing-report" element={<MainLayout> <PenetrationTestingReport reportData={reportData} /></MainLayout>} />
           {/* <Route path="*" element={<AuthLayout><Login /></AuthLayout>} /> */}
