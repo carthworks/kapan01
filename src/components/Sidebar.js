@@ -24,14 +24,14 @@ const Sidebar = () => {
         <div className="menu">
           <div className="menu-header">Navigation</div>
           <div className="menu-item ">
-            <a className="menu-link">
+            <a href="#" className="menu-link" onClick={(e) => e.preventDefault()}>
               <span className="menu-icon">
                 <i className="bi bi-cpu"></i>
               </span>
               {/* <span className="menu-text">Dashboard</span> */}
               <Link
                 className="menu-text d-flex align-items-center nav-link"
-                to="/dashboard"
+                to="/dashboardmain"
               >
                 Home
               </Link>
@@ -43,7 +43,7 @@ const Sidebar = () => {
               activeMenu === "/dashboard" ? "active" : ""
             }`}
           >
-            <a href="javascript:;" className="menu-link">
+            <a href="#" className="menu-link" onClick={(e) => e.preventDefault()}>
               <div className="menu-icon">
                 <i className="bi bi-bag-check"></i>
                 <span className="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span>
@@ -61,7 +61,7 @@ const Sidebar = () => {
             </a>
             <div className="menu-submenu ">
               <div className="menu-item">
-                <Link to="/overview" className="menu-link">
+                <Link to="/dashboard/overview" className="menu-link">
                   <div
                     className="menu-text"
                     title="(Real-time security insights, alerts)"
@@ -86,22 +86,20 @@ const Sidebar = () => {
                 >
                   <div className="menu-text"> 🔍Threat Intelligence </div>
                 </Link>
-                <a
-                  href="pos_customer_order.html"
-                  target="_blank"
+                <Link
+                  to="/dashboard/incident-summary"
                   title="(Recent vulnerabilities & attacks)"
                   className="menu-link"
                 >
                   <div className="menu-text"> ⚠️ Incident Summary </div>
-                </a>
-                <a
-                  href="pos_customer_order.html"
-                  target="_blank"
+                </Link>
+                <Link
+                  to="/dashboard/security-score"
                   title="(System health rating)"
                   className="menu-link"
                 >
                   <div className="menu-text"> 🏆 Security Score </div>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -111,7 +109,7 @@ const Sidebar = () => {
               activeMenu === "/threat-detection" ? "active" : ""
             }`}
           >
-            <a href="javascript:;" className="menu-link">
+            <a href="#" className="menu-link" onClick={(e) => e.preventDefault()}>
               <div className="menu-icon">
                 <i className="bi bi-bag-check"></i>
                 <span className="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span>
@@ -150,7 +148,7 @@ const Sidebar = () => {
                     AI Threat Prediction
                   </div>
                 </Link>
-                <Link to="/deviceinventory" className="menu-link">
+                <Link to="/endpoint-security/deviceinventory" className="menu-link">
                   <div
                     className="menu-text"
                     title="(Automated & manual response)"
@@ -167,7 +165,7 @@ const Sidebar = () => {
               activeMenu === "/osapplication-security" ? "active" : ""
             }`}
           >
-            <a href="javascript:;" className="menu-link">
+            <a href="#" className="menu-link" onClick={(e) => e.preventDefault()}>
               <div className="menu-icon">
                 <i className="bi bi-bag-check"></i>
                 <span className="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span>
@@ -191,7 +189,7 @@ const Sidebar = () => {
                   <div className="menu-text" title="(Fix recommendations)">
                   Vulnerability App                </div>
                 </Link>
-                <Link to="/deviceinventory" className="menu-link">
+                <Link to="/endpoint-security/deviceinventory" className="menu-link">
                   <div className="menu-text" title="(Fix recommendations)">
                     AI-powered Security Advisor
                   </div>
@@ -229,7 +227,7 @@ const Sidebar = () => {
               activeMenu === "/endpoint-security" ? "active" : ""
             }`}
           >
-            <a href="javascript:;" className="menu-link">
+            <a href="#" className="menu-link" onClick={(e) => e.preventDefault()}>
               <div className="menu-icon">
                 <i className="bi bi-bag-check"></i>
                 <span className="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span>
@@ -247,7 +245,7 @@ const Sidebar = () => {
             </a>
             <div className="menu-submenu ">
               <div className="menu-item">
-                <Link to="/deviceinventory" className="menu-link">
+                <Link to="/endpoint-security/deviceinventory" className="menu-link">
                   <div
                     className="menu-text"
                     title="(List of monitored endpoints)"
@@ -289,7 +287,7 @@ const Sidebar = () => {
               activeMenu === "/network-security" ? "active" : ""
             }`}
           >
-            <a href="javascript:;" className="menu-link">
+            <a href="#" className="menu-link" onClick={(e) => e.preventDefault()}>
               <div className="menu-icon">
                 <i className="bi bi-bag-check"></i>
                 <span className="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span>
@@ -307,7 +305,7 @@ const Sidebar = () => {
             </a>
             <div className="menu-submenu ">
               <div className="menu-item">
-                <Link to="/Firewall & Traffic Monitoring" className="menu-link">
+                <Link to="/network-security/firewall" className="menu-link">
                   <div
                     className="menu-text"
                     title="(List of monitored endpoints)"
@@ -316,7 +314,7 @@ const Sidebar = () => {
                   </div>
                 </Link>
 
-                <Link to="/Unusual Activity Detection" className="menu-link">
+                <Link to="/network-security/activity-detection" className="menu-link">
                   <div
                     className="menu-text"
                     title="(Check device security risks)"
@@ -324,7 +322,7 @@ const Sidebar = () => {
                     Unusual Activity Detection
                   </div>
                 </Link>
-                <Link to="/Geo-based Access Control" className="menu-link">
+                <Link to="/network-security/geo-access" className="menu-link">
                   <div
                     className="menu-text"
                     title="(Restrict/block unauthorized devices)"
@@ -349,7 +347,7 @@ const Sidebar = () => {
               activeMenu === "/reports" ? "active" : ""
             }`}
           >
-            <a href="javascript:;" className="menu-link">
+            <a href="#" className="menu-link" onClick={(e) => e.preventDefault()}>
               <div className="menu-icon">
                 <i className="bi bi-bag-check"></i>
                 <span className="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span>
@@ -367,7 +365,7 @@ const Sidebar = () => {
             </a>
             <div className="menu-submenu ">
               <div className="menu-item">
-                <Link to="/securityreports " className="menu-link">
+                <Link to="/reports/security" className="menu-link">
                   <div className="menu-text" title="(Customizable reports)">
                     Security Reports
                   </div>
@@ -377,12 +375,12 @@ const Sidebar = () => {
                     Compliance Reports
                   </div>
                 </Link>
-                <Link to="/Attack Trend" className="menu-link">
+                <Link to="/reports/attack-trends" className="menu-link">
                   <div className="menu-text" title="(Historical insights)">
                     Attack Trend Analysis
                   </div>
                 </Link>
-                <Link to="/scheduled Reports " className="menu-link">
+                <Link to="/reports/scheduled" className="menu-link">
                   <div className="menu-text" title="(Auto-generated analytics)">
                     Scheduled Reports
                   </div>
@@ -403,7 +401,7 @@ const Sidebar = () => {
               activeMenu === "/user-management" ? "active" : ""
             }`}
           >
-            <a href="javascript:;" className="menu-link">
+            <a href="#" className="menu-link" onClick={(e) => e.preventDefault()}>
               <div className="menu-icon">
                 <i className="bi bi-bag-check"></i>
                 <span className="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span>
@@ -421,7 +419,7 @@ const Sidebar = () => {
             </a>
             <div className="menu-submenu ">
               <div className="menu-item">
-                <Link to="/Firewall & Traffic Monitoring" className="menu-link">
+                <Link to="/user-access-control" className="menu-link">
                   <div
                     className="menu-text"
                     title="(List of monitored endpoints)"
@@ -430,7 +428,7 @@ const Sidebar = () => {
                   </div>
                 </Link>
 
-                <Link to="/Unusual Activity Detection" className="menu-link">
+                <Link to="/multi-tenant-support" className="menu-link">
                   <div
                     className="menu-text"
                     title="(Check device security risks)"
@@ -438,15 +436,15 @@ const Sidebar = () => {
                     Multi-Tenant Support
                   </div>
                 </Link>
-                <Link to="/Geo-based Access Control" className="menu-link">
+                <Link to="/user-role" className="menu-link">
                   <div
                     className="menu-text"
                     title="(Restrict/block unauthorized devices)"
                   >
-                    2FA & Authentication Logs
+                    User Roles
                   </div>
                 </Link>
-                <Link to="/networkcontrol" className="menu-link">
+                <Link to="/role-based-permissions" className="menu-link">
                   <div
                     className="menu-text"
                     title="(Restrict unauthorized access)"
@@ -463,7 +461,7 @@ const Sidebar = () => {
               activeMenu === "/logout" ? "active" : ""
             }`}
           >
-            <a href="javascript:;" className="menu-link">
+            <a href="#" className="menu-link" onClick={(e) => e.preventDefault()}>
               <div className="menu-icon">
                 <i className="bi bi-bag-check"></i>
                 <span className="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span>

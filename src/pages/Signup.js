@@ -31,7 +31,17 @@ const Signup = () => {
     if (!validateForm()) return;
 
     try {
-      await axios.post("https://your-api-url.com/signup", formData);
+      // Use a more modern approach with fetch API
+      const response = await fetch("https://your-api-url.com/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (!response.ok) throw new Error("Signup failed");
+      
       setSuccessMessage("Account created successfully! Redirecting to login...");
       setTimeout(() => navigate("/login"), 2000);
     } catch (err) {
