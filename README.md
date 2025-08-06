@@ -2,6 +2,8 @@
 
 **CybersecAI** is an AI-powered cybersecurity platform that delivers real-time threat detection, automated incident response, and actionable analytics to safeguard organizations of all sizes. Built with cutting-edge machine learning models, it helps reduce manual workload, streamline security operations, and improve response times.
 
+Demo URL:https://kapan01.vercel.app/
+
 ---
 
 ## 📌 Table of Contents
